@@ -36,7 +36,7 @@ Single-author competition solution for **Tencent Advertising Algorithm Competiti
 
 指标留档（来自报告中的可追溯估算口径）：
 
-| 指标 | baseline（估算） | final（估算/已知） | 说明 |
+| 指标 | baseline） | final  | 说明 |
 |---|---:|---:|---|
 | Score | 0.0177 | 0.1060 | 已知最终分数 + 增长率反推 |
 | NDCG@10 | 0.0118 | 0.0707 | 按 NDCG:HR ≈ 1:2 估算 |
@@ -67,17 +67,17 @@ Single-author competition solution for **Tencent Advertising Algorithm Competiti
 ### 4. 技术架构
 ```mermaid
 flowchart LR
-    A[Raw User Sequence + Multi-modal Item Features] --> B[Feature Pipeline]
-    B --> C[Popularity Precompute / CTR / Alias Weights]
-    B --> D[RQ-VAE Training]
-    D --> E[Precomputed Semantic IDs]
-    A --> F[Sequence Encoder: HSTU + RoPE + Time Bias]
+  A["Raw User Sequence + Multi-modal Item Features"] --> B["Feature Pipeline"]
+  B --> C["Popularity Precompute / CTR / Alias Weights"]
+  B --> D["RQ-VAE Training"]
+  D --> E["Precomputed Semantic IDs"]
+  A --> F["Sequence Encoder: HSTU + RoPE + Time Bias"]
     E --> F
-    C --> G[Popularity-aware Negative Sampling]
-    F --> H[InfoNCE + Action-aware Margin]
+  C --> G["Popularity-aware Negative Sampling"]
+  F --> H["InfoNCE + Action-aware Margin"]
     G --> H
-    H --> I[Trained Retrieval Model]
-    I --> J[Chunked Cosine Retrieval (PyTorch)]
+  H --> I["Trained Retrieval Model"]
+  I --> J["Chunked Cosine Retrieval - PyTorch"]
 ```
 
 ### 5. 代码结构（核心模块）
@@ -172,7 +172,7 @@ top10s, user_list = infer()
 print(len(top10s), len(user_list))
 ```
 
-### 8. 给算法工程师的关注点
+### 8. 关注点
 - 训练目标从 point-wise BCE 升级为 set-wise InfoNCE，并加入动作边际与样本级加权
 - 时间建模不是“加时间特征”而是“特征层 + 注意力打分层”双路径融合
 - 语义链路不是简单离散化，而是带码本健康管理与可落地缓存系统
@@ -202,7 +202,7 @@ Key evidence in the screenshot:
 
 Recorded metric snapshot (traceable estimate from report assumptions):
 
-| Metric | Baseline (estimated) | Final (estimated/known) | Note |
+| Metric | Baseline  | Final  | Note |
 |---|---:|---:|---|
 | Score | 0.0177 | 0.1060 | Back-calculated from known final score |
 | NDCG@10 | 0.0118 | 0.0707 | Estimated with NDCG:HR ≈ 1:2 |
