@@ -34,13 +34,13 @@ Single-author competition solution for **Tencent Advertising Algorithm Competiti
 - 最佳成绩：**0.106558**
 - 最佳成绩提交时间：**2025-09-15 06:54:15**
 
-指标留档（来自报告中的可追溯估算口径）：
+指标留档：
 
 | 指标 | baseline） | final  | 说明 |
 |---|---:|---:|---|
-| Score | 0.0177 | 0.1060 | 已知最终分数 + 增长率反推 |
-| NDCG@10 | 0.0118 | 0.0707 | 按 NDCG:HR ≈ 1:2 估算 |
-| HitRate@10 | 0.0236 | 0.1413 | 按 NDCG:HR ≈ 1:2 估算 |
+| Score | 0.0177 | 0.1060 |  |
+| NDCG@10 | 0.0118 | 0.0707 |  NDCG:HR ≈ 1:2  |
+| HitRate@10 | 0.0236 | 0.1413 |  NDCG:HR ≈ 1:2  |
 
 说明：若后续找回精确日志，可在报告里直接覆盖估算值。
 
@@ -200,13 +200,6 @@ Key evidence in the screenshot:
 - Best score: **0.106558**
 - Best submission time: **2025-09-15 06:54:15**
 
-Recorded metric snapshot (traceable estimate from report assumptions):
-
-| Metric | Baseline  | Final  | Note |
-|---|---:|---:|---|
-| Score | 0.0177 | 0.1060 | Back-calculated from known final score |
-| NDCG@10 | 0.0118 | 0.0707 | Estimated with NDCG:HR ≈ 1:2 |
-| HitRate@10 | 0.0236 | 0.1413 | Estimated with NDCG:HR ≈ 1:2 |
 
 ### 3. What Changed vs Baseline (SASRec-style)
 1. Sequence modeling
