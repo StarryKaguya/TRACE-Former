@@ -39,8 +39,8 @@ Single-author competition solution for **Tencent Advertising Algorithm Competiti
 | 指标 | baseline） | final  | 说明 |
 |---|---:|---:|---|
 | Score | 0.0177 | 0.1060 |  |
-| NDCG@10 | 0.0118 | 0.0707 |  NDCG:HR ≈ 1:2  |
-| HitRate@10 | 0.0236 | 0.1413 |  NDCG:HR ≈ 1:2  |
+| NDCG@10 | 0.0118 | 0.0707 |  NDCG:HR = 1:2  |
+| HitRate@10 | 0.0236 | 0.1413 |  NDCG:HR = 1:2  |
 
 说明：若后续找回精确日志，可在报告里直接覆盖估算值。
 
